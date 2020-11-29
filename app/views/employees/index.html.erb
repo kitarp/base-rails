@@ -140,10 +140,15 @@
         </td>
 
         <td>
-          <a href="/employees/<%= an_employee.id %>">
+          <a  role="button" class="btn btn-primary" href="/employees/<%= an_employee.id %>">
             Show details
           </a>
         </td>
+              <td>
+        <a  role="button" class="btn btn-primary" href="/delete_employee/<%= an_employee.id %>">
+          Delete employee
+        </a>
+      </td>
       </tr>
       <% end %>
     </table>

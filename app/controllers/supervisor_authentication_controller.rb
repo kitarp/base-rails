@@ -19,7 +19,7 @@ class SupervisorAuthenticationController < ApplicationController
       else
         session[:supervisor_id] = supervisor.id
       
-        redirect_to("/", { :notice => "Signed in successfully." })
+        redirect_to("/employees", { :notice => "Signed in successfully." })
       end
     else
       redirect_to("/supervisor_sign_in", { :alert => "No supervisor with that email address." })

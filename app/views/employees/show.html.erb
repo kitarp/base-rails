@@ -3,19 +3,6 @@
     <h1>
       Employee #<%= @the_employee.id %> details
     </h1>
-
-    <div>
-      <div>
-        <a href="/employees">
-          Go back
-        </a>
-      </div>
-
-      <div>
-        <a href="/delete_employee/<%= @the_employee.id %>">
-          Delete employee
-        </a>
-      </div>
     </div>
 
     <dl>
@@ -90,8 +77,21 @@
           <button type="submit" class="btn btn-primary">Update Employee</button>
         </div>
       </div>
+
+      <div>
+        <a  role="button" class="btn btn-primary" href="/delete_employee/<%= @the_employee.id %>">
+          Delete employee
+        </a>
+      </div>
     </form>
   </div>
+
 </div>
 
+
 <hr>
+      <div>
+      <a  role="button" class="btn btn-primary" href="/employees">
+        Go back
+      </a>
+    </div>
