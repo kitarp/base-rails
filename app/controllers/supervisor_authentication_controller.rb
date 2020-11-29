@@ -57,6 +57,10 @@ class SupervisorAuthenticationController < ApplicationController
   end
     
   def edit_profile_form
+
+    matching_employees = Employee.where({ :supervisor_id => session[:supervisor_id] })
+
+    @list_of_employees = matching_employees.order({ :created_at => :desc })
     render({ :template => "supervisor_authentication/edit_profile.html.erb" })
   end
 

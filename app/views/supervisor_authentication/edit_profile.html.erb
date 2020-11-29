@@ -1,3 +1,16 @@
+      <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+
+          <!-- <a role="button" class="btn btn-primary" class="navbar-brand" href="/edit_supervisor_profile">Edit Profile</a> -->
+          <a role="button" class="btn btn-primary" class="navbar-brand" href="/supervisor_sign_out">Sign Out</a>
+          <a role="button" class="btn btn-primary" class="navbar-brand" href="/employees">All Employees</a>
+          <a role="button" class="btn btn-primary" class="navbar-brand" href="/edit_supervisor_profile">Signed in as <%=Supervisor.where({ :id => session.fetch(:supervisor_id) }).at(0).first_name%></a>
+          
+          
+        </div>
+      </div>
+    </nav>
 <div >
   <h5>
     Edit Supervisor Account
@@ -40,3 +53,94 @@
     </form>
   </div>
 </div>
+
+<hr>
+
+  <h5>
+    Employees reporting to <%=Supervisor.where({ :id => session.fetch(:supervisor_id) }).at(0).first_name%>
+  </h5>
+<div>
+  <div>
+    <table class="table table-hover">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Supervisor
+        </th>
+
+        <th>
+          First name
+        </th>
+
+        <th>
+          Last name
+        </th>
+
+        <th>
+          Major
+        </th>
+
+        <th>
+          Minor
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_employees.each do |an_employee| %>
+      <tr>
+        <td>
+          <%= an_employee.id %>
+        </td>
+
+        <td>
+          <%= an_employee.supervisor_id %>
+        </td>
+
+        <td>
+          <%= an_employee.first_name %>
+        </td>
+
+        <td>
+          <%= an_employee.last_name %>
+        </td>
+
+        <td>
+          <%= an_employee.major %>
+        </td>
+
+        <td>
+          <%= an_employee.minor %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_employee.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_employee.updated_at) %> ago
+        </td>
+              <td>
+        <a  role="button" class="btn btn-primary" href="/delete_employee/<%= an_employee.id %>">
+          Delete employee
+        </a>
+      </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
+
