@@ -1,0 +1,152 @@
+
+
+ <div>
+  <div>
+    <h1>
+      List of all employees
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new employee
+    </h2>
+
+    <form action="/insert_employee" method="post">
+      <div>
+        <label for="supervisor_id_box">
+          Supervisor
+        </label>
+
+        <input type="text" id="supervisor_id_box" name="query_supervisor_id">
+      </div>
+
+      <div>
+        <label for="first_name_box">
+          First name
+        </label>
+
+        <input type="text" id="first_name_box" name="query_first_name">
+      </div>
+
+      <div>
+        <label for="last_name_box">
+          Last name
+        </label>
+
+        <input type="text" id="last_name_box" name="query_last_name">
+      </div>
+
+      <div>
+        <label for="major_box">
+          Major
+        </label>
+
+        <input type="text" id="major_box" name="query_major">
+      </div>
+
+      <div>
+        <label for="minor_box">
+          Minor
+        </label>
+
+        <input type="text" id="minor_box" name="query_minor">
+      </div>
+
+      <button>
+        Create employee
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Supervisor
+        </th>
+
+        <th>
+          First name
+        </th>
+
+        <th>
+          Last name
+        </th>
+
+        <th>
+          Major
+        </th>
+
+        <th>
+          Minor
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_employees.each do |an_employee| %>
+      <tr>
+        <td>
+          <%= an_employee.id %>
+        </td>
+
+        <td>
+          <%= an_employee.supervisor_id %>
+        </td>
+
+        <td>
+          <%= an_employee.first_name %>
+        </td>
+
+        <td>
+          <%= an_employee.last_name %>
+        </td>
+
+        <td>
+          <%= an_employee.major %>
+        </td>
+
+        <td>
+          <%= an_employee.minor %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_employee.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_employee.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/employees/<%= an_employee.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
