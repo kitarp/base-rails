@@ -16,50 +16,51 @@
       Add a new employee
     </h2>
 
-    <form action="/insert_employee" method="post">
-      <div>
+    <form class="form-inline" action="/insert_employee" method="post">
+      <div class="form-group">
         <label for="supervisor_id_box">
           Supervisor
         </label>
 
-        <input type="text" id="supervisor_id_box" name="query_supervisor_id">
+        <input type="text" class="form-control" id="supervisor_id_box" name="query_supervisor_id">
       </div>
 
-      <div>
+      <div class="form-group">
         <label for="first_name_box">
           First name
         </label>
 
-        <input type="text" id="first_name_box" name="query_first_name">
+        <input type="text" class="form-control" id="first_name_box" name="query_first_name">
       </div>
 
-      <div>
+      <div class="form-group">
         <label for="last_name_box">
           Last name
         </label>
 
-        <input type="text" id="last_name_box" name="query_last_name">
+        <input type="text" class="form-control" id="last_name_box" name="query_last_name">
       </div>
 
-      <div>
+      <div class="form-group">
         <label for="major_box">
           Major
         </label>
 
-        <input type="text" id="major_box" name="query_major">
+        <input type="text" class="form-control" id="major_box" name="query_major">
       </div>
 
-      <div>
+      <div class="form-group">
         <label for="minor_box">
           Minor
         </label>
 
-        <input type="text" id="minor_box" name="query_minor">
+        <input type="text" class="form-control" id="minor_box" name="query_minor">
       </div>
-
-      <button>
-        Create employee
-      </button>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-14">
+          <button type="submit" class="btn btn-primary">Create Employee</button>
+        </div>
+      </div>
     </form>
   </div>
 </div>
@@ -67,7 +68,7 @@
 <hr>
 <div>
   <div>
-    <table>
+    <table class="table table-hover">
       <tr>
         <th>
           ID

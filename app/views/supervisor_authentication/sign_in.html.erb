@@ -1,19 +1,21 @@
 <h1>Sign in</h1>
 
-<form action="/supervisor_verify_credentials" method="post">
-  <div>
-    <label for="email_box">Email</label>
-    <input id="email_box" name="query_email" placeholder="Enter your email..." type="text">
+<form  class="form-horizontal" action="/supervisor_verify_credentials" method="post">
+  <div class="form-group">
+    <label for="email_box" class="col-sm-2 control-label">Email</label>
+    <input id="email_box"  class="col-sm-10" name="query_email" placeholder="Enter your email..." type="text">
   </div>
 
-  <div>
-    <label for="password_box">Password</label>
-    <input id="password_box" name="query_password" placeholder="Enter your password..." type="password">
+  <div class="form-group">
+    <label for="password_box" class="col-sm-2 control-label">Password</label>
+    <input id="password_box" class="col-sm-10" name="query_password" placeholder="Enter your password..." type="password">
   </div>
 
-  <button>
-    Sign in
-  </button>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Sign In</button>
+    </div>
+  </div>
 </form>
 
 <hr>
