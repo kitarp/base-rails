@@ -18,12 +18,14 @@
   <body>
 
     <% if notice.present? %>
-      <div style = "border: thin green solid; color: green">
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <%= notice%>
       </div>
     <% end %>  
     <% if alert.present? %>    
-      <div style = "border: thin red solid; color: red">
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <%= alert%>
       </div>
     <% end %>  

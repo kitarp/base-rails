@@ -43,7 +43,7 @@ class SupervisorAuthenticationController < ApplicationController
     @supervisor.password_confirmation = params.fetch("query_password_confirmation")
     @supervisor.first_name = params.fetch("query_first_name")
     @supervisor.last_name = params.fetch("query_last_name")
-    @supervisor.employees_count = params.fetch("query_employees_count")
+    @supervisor.employees_count = "10" # params.fetch("query_employees_count")
 
     save_status = @supervisor.save
 
@@ -71,12 +71,12 @@ class SupervisorAuthenticationController < ApplicationController
     @supervisor.password_confirmation = params.fetch("query_password_confirmation")
     @supervisor.first_name = params.fetch("query_first_name")
     @supervisor.last_name = params.fetch("query_last_name")
-    @supervisor.employees_count = params.fetch("query_employees_count")
+    @supervisor.employees_count = "10" #params.fetch("query_employees_count")
     
     if @supervisor.valid?
       @supervisor.save
 
-      redirect_to("/", { :notice => "Supervisor account updated successfully."})
+      redirect_to("/employees", { :notice => "Supervisor account updated successfully."})
     else
       render({ :template => "supervisor_authentication/edit_profile_with_errors.html.erb" })
     end
