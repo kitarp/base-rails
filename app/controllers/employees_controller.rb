@@ -19,7 +19,7 @@ class EmployeesController < ApplicationController
 
   def create
     the_employee = Employee.new
-    the_employee.supervisor_id = params.fetch("query_supervisor_id")
+    the_employee.supervisor_id = session.fetch(:supervisor_id) # params.fetch("query_supervisor_id")
     the_employee.first_name = params.fetch("query_first_name")
     the_employee.last_name = params.fetch("query_last_name")
     the_employee.major = params.fetch("query_major")
@@ -37,7 +37,7 @@ class EmployeesController < ApplicationController
     the_id = params.fetch("path_id")
     the_employee = Employee.where({ :id => the_id }).at(0)
 
-    the_employee.supervisor_id = params.fetch("query_supervisor_id")
+    the_employee.supervisor_id = session.fetch(:supervisor_id) # params.fetch("query_supervisor_id")
     the_employee.first_name = params.fetch("query_first_name")
     the_employee.last_name = params.fetch("query_last_name")
     the_employee.major = params.fetch("query_major")
