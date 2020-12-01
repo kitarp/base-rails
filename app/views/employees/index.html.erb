@@ -80,9 +80,7 @@
   <div>
     <table class="table table-hover">
       <tr>
-        <th>
-          ID
-        </th>
+
 
         <th>
           Supervisor
@@ -118,9 +116,7 @@
 
       <% @list_of_employees.each do |an_employee| %>
       <tr>
-        <td>
-          <%= an_employee.id %>
-        </td>
+
 
         <td>
           <%=Supervisor.where({ :id => an_employee.supervisor_id }).at(0).first_name%>
